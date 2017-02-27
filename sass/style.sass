@@ -1,0 +1,109 @@
+@import "mixin"
+
+*
+	margin: 0
+	padding: 0
+
+body
+	font-size: 0
+
+section
+	display: inline-block
+	font-size: 100%
+	width: 100vw
+	height: 100vh
+	overflow: hidden
+
+	&:nth-child(1)
+		order: 5
+	&:nth-child(2)
+		order: 6
+	&:nth-child(3)
+		order: 4
+	&:nth-child(4)
+		order: 1
+	&:nth-child(5)
+		order: 3
+	&:nth-child(6)
+		order: 7
+	&:nth-child(7)
+		order: 2
+	&:nth-child(8)
+		order: 8
+	&:nth-child(9)
+		order: 9															
+
+p, h2, h3 
+	padding: 10px
+
+h1
+	font-size: 4vw
+
+p, h2
+	font-size: 1.6vw
+
+a
+	text-decoration: none
+	color: white
+
+.bg	
+	@include background-size(cover)
+	background-repeat: no-repeat
+	background-position: center
+
+.infoBox
+	display: inline-block
+	@include border-radius(10px)
+	vertical-align: top
+
+.fa
+	color: white
+	position: absolute
+	left: 50%
+	top: 50%
+	@include transform-translate(-50%, -50%)
+
+.container
+	display: inline-block
+	width: 90%
+	margin: 5vh 5%
+	vertical-align: top
+	font-family: sans-serif
+
+.pages
+	display: -webkit-box
+	display: -moz-box
+	display: -ms-flexbox
+	display: -webkit-flex
+	display: flex
+	-webkit-flex-flow: row wrap
+	justify-content: space-around
+	position: relative
+	width: 300vw
+	height: 300vh
+
+.frame
+	position: absolute
+	overflow: hidden
+	width: 100vw
+	height: 100vh
+	top: 0
+	left: 0
+
+.right
+	float: right
+
+.inset
+	display: none
+
+@import "main"
+@import "laser_engraving"
+@import "galerie"
+@import "spoons"
+@import "knives"
+@import "comment"
+@import "price"
+@import "contacts"
+@import "modal"
+@import "aside"
+@import "slider"

@@ -1,0 +1,36 @@
+#modal
+	position: fixed
+	background-color: rgba(0,0,0,0.7)
+	height: 100%
+	width: 100%
+	z-index: 10
+	top: 0
+	display: none
+	
+	.inform
+		position: absolute
+		width: 0
+		height: 0
+		left: 50%
+		top: 50%
+		background-color: #FFF
+		overflow: auto
+
+	#close
+		position: absolute
+		border: 0.5vmin solid white 
+		@include border-radius(50%)
+		width: 5vmin
+		height: 5vmin
+		right: 5vmin
+		top: 5vmin
+		background: rgba(0,0,0,0)
+		cursor: pointer
+		display: none
+
+		.fa
+			font-size: 4vmin
+	img
+		display: inline-block
+		width: 20%
+		margin: 5%
