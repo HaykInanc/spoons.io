@@ -22,6 +22,15 @@ $(document).ready(function(){
 	    changeBorder();    
 	};
 
+	function sliderLRPosition(){
+		var items =  $(".sliderLR .item");
+		var itemsCount = $(".sliderLR .item").length;
+		$(".sliderLR").css("width", itemsCount*100+"vw");	
+	};
+
+	sliderLRPosition();
+
+
 	function asideCreate(){
 		var i, j, img,
 			pointPosition = new Array();
@@ -159,9 +168,9 @@ $(document).ready(function(){
 
 	$(".slider li").on("click", function(){
 		if (!$(this).hasClass("active")){
+			var index = $(this).index();
 			$(".slider li").removeClass("active");
 			$(this).addClass("active");			
-			var index = $(this).index();
 			$(".slider p").stop().stop().animate({
 				opacity: "0"
 			}, 300, function(){
@@ -174,24 +183,15 @@ $(document).ready(function(){
 		}
 	});	
 
-	function commentsPosition(){
-		var elemCount = $("#comment .element").length;
-		var activeIndex = $("#comment .element.active").index();
-		var shiftС = 0;
-
-		console.log(activeIndex)
-
-		for (i=0; i <=elemCount-1; i++){
-			if (i > activeIndex){
-				shiftС = 50;
-			};
-			$("#comment .element").eq(i).css("left", i*50+shiftС+"%");
-			$("#comment .element").eq(i).css("z-index", i+1);
-		};
-		$("#comment .element").eq(elemCount-1).css("left", "-50%");
-		$("#comment .element").eq(elemCount-1).css("z-index", 0);		
-	};
-
-	commentsPosition();
+	$(".sliderLR_trigger li").on("click", function(){
+		if(!$(this).hasClass("active")){
+			var index = -$(this).index();
+			$(".sliderLR_trigger li").removeClass("active");
+			$(this).addClass("active");	
+			$(".sliderLR").stop().stop().animate({
+				left: index*100+"vw"
+			});
+		}
+	});
 
 });

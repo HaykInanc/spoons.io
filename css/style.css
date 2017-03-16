@@ -189,45 +189,29 @@ a {
 #comment {
   position: relative;
   background-color: #c8f1f1; }
-  #comment .leftTrig, #comment .rightTrig {
-    position: absolute;
-    height: 100%;
-    width: 10%;
-    z-index: 10; }
-    #comment .leftTrig:hover, #comment .rightTrig:hover {
-      background-color: rgba(0, 0, 0, 0.7); }
-  #comment .leftTrig {
-    left: 0; }
-  #comment .rightTrig {
-    right: 0; }
-  #comment .slider {
-    position: absolute;
-    left: 15vw;
-    width: 70vw;
-    height: 25vw; }
-  #comment .element {
-    position: absolute;
-    background-image: url("../img/comments/1.png");
-    width: 100%;
-    height: inherit;
-    background-size: cover;
-    color: white; }
-    #comment .element p {
-      position: absolute;
-      -webkit-transform: translate(-50%, -50%);
-      -moz-transform: translate(-50%, -50%);
-      -ms-transform: translate(-50%, -50%);
-      -o-transform: translate(-50%, -50%);
-      transform: translate(-50%, -50%);
-      left: 75%;
-      top: 50%;
-      width: 30vw; }
 
 #price {
   background-color: #c8f1f1; }
 
 #contacts {
   background-color: #c8f1f1; }
+  #contacts .container {
+    position: relative; }
+  #contacts .map {
+    position: absolute;
+    right: 0;
+    display: inline-block;
+    border: 0.3vw solid blue;
+    width: 40vw;
+    height: 50vh; }
+  #contacts address {
+    margin-top: 5vw;
+    display: inline-block;
+    font-size: 2vw;
+    width: 50%; }
+    #contacts address span {
+      display: inline-block;
+      margin-top: 2vw; }
 
 #modal {
   position: fixed;
@@ -318,6 +302,43 @@ aside {
       display: inline-block;
       cursor: pointer; }
       .slider .items li:hover {
+        background-color: red; }
+
+.sliderLR_container {
+  margin-top: 10vh;
+  overflow: hidden;
+  width: 90vw;
+  left: 5vw;
+  color: white; }
+  .sliderLR_container .sliderLR {
+    position: absolute;
+    left: 0;
+    background-color: #9516DF; }
+    .sliderLR_container .sliderLR .item {
+      display: inline-block;
+      margin-left: 5vw;
+      margin-right: 5vw;
+      width: 90vw;
+      background-image: url("../img/comments/face.png");
+      background-size: 40%;
+      background-repeat: no-repeat; }
+    .sliderLR_container .sliderLR p {
+      margin: 3vw;
+      margin-left: 50%;
+      width: 50%; }
+  .sliderLR_container .sliderLR_trigger {
+    position: absolute;
+    bottom: 5vh;
+    left: 25%;
+    font-size: 10vw;
+    width: 50%;
+    text-align: center; }
+    .sliderLR_container .sliderLR_trigger li {
+      background-color: green;
+      padding: 1vw;
+      display: inline-block;
+      cursor: pointer; }
+      .sliderLR_container .sliderLR_trigger li:hover {
         background-color: red; }
 
 /*# sourceMappingURL=style.css.map */
