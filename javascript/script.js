@@ -9,8 +9,8 @@ $(document).ready(function(){
 	$(".pages").css("top", -pageG + "vh");	
 
 	function changeBorder(){
-	    $("aside div").css("border", "none");
-	    $("aside div[data-x="+pageG/100+"][data-y="+pageV/100+"]").css("border", "3px solid red");
+	    $("aside .asidePoint").css("border", "none");
+	    $("aside .asidePoint[data-x="+pageG/100+"][data-y="+pageV/100+"]").css("border", "3px solid #2CC990");
 	};
 
 	function scroll(){
@@ -32,12 +32,18 @@ $(document).ready(function(){
 
 
 	function asideCreate(){
-		var i, j, img,
+		var i, j, img, trigger
 			pointPosition = new Array();
 
 		var aside = document.createElement('aside');
-		$("body").append(aside);
+		trigger = document.createElement('div');
+		trigger.setAttribute("class", "trigger");
+		img = document.createElement('img');
+		img.setAttribute("src", "img/navIcons/main.png");
+		trigger.append(img);
+		$("body").append(trigger);
 
+		$("body").append(aside);
 		for (j = 0; j <= rowLength-1; j++) {
 			pointPosition[j] = [];
 			for (i = 0; i <= rowLength-1; i++) {
@@ -45,6 +51,7 @@ $(document).ready(function(){
 				img = document.createElement('img')
 				pointPosition[j][i].setAttribute("data-x", i);
 				pointPosition[j][i].setAttribute("data-y", j);
+				pointPosition[j][i].setAttribute("class", "asidePoint");
 				img.setAttribute("src", "img/navIcons/" + (i+j*3+1) +".png")
 				pointPosition[j][i].append(img)
 				aside.append(pointPosition[j][i]);
@@ -54,11 +61,11 @@ $(document).ready(function(){
 
 	function asideOpen(){
 		var pointX, pointY;
-		$("aside div").css("display", "block");
-		for (i = 0; i < $("aside div").length-1; i++) {	
-			pointX = $("aside div").eq(i).attr("data-x");
-			pointY = $("aside div").eq(i).attr("data-y");				 
-			$("aside div").eq(i).stop().stop().animate({
+		$("aside .asidePoint").css("display", "block");
+		for (i = 0; i < $("aside .asidePoint").length-1; i++) {	
+			pointX = $("aside .asidePoint").eq(i).attr("data-x");
+			pointY = $("aside .asidePoint").eq(i).attr("data-y");				 
+			$("aside .asidePoint").eq(i).stop().stop().animate({
 				left: -(2-pointX) * 80 + "px",
 				top: -(2-pointY) * 80 + "px",
 				opacity: 1
@@ -67,18 +74,18 @@ $(document).ready(function(){
 	};
 
 	function asideClose(){
-		$("aside div").stop().stop().animate({
+		$("aside .asidePoint").stop().stop().animate({
 			left: 0,
 			top: 0,
 			opacity: 0
 		}, 300, function(){
-			$("aside div").css("display", "none");
+			$("aside .asidePoint").css("display", "none");
 		});			
 	};
 
 	asideCreate();	
 
-	$("aside div").on("click", function(){
+	$("aside .asidePoint").on("click", function(){
 		pageV = $(this).attr("data-y")*100;
 		pageG = $(this).attr("data-x")*100;
 		scroll();		
@@ -126,7 +133,7 @@ $(document).ready(function(){
 		};
 	});
 
-	$("aside").on("click", function(){	
+	$(".trigger").on("click", function(){	
 		if ($("aside div").css("display") == "none"){
 			asideOpen();
 		}

@@ -34,7 +34,8 @@ p, h2, h3 {
   padding: 10px; }
 
 h1 {
-  font-size: 4vw; }
+  font-size: 4vw;
+  color: #422E39; }
 
 p, h2 {
   font-size: 1.6vw; }
@@ -43,7 +44,7 @@ a {
   text-decoration: none;
   color: white; }
 
-.bg {
+.bg, #main, #laser_engraving, #galerie, #spoons, #knives, #comment, #price, #contacts {
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -ms-background-size: cover;
@@ -106,7 +107,7 @@ a {
   display: none; }
 
 #main {
-  background-color: #c8f1f1; }
+  background-image: url(../img/bgimg/6.jpg); }
   #main .logo {
     width: 20%;
     display: inline-block; }
@@ -137,7 +138,7 @@ a {
       width: 80%; }
 
 #laser_engraving {
-  background-color: #c8f1f1; }
+  background-image: url(../img/bgimg/5.jpg); }
   #laser_engraving .video {
     display: inline-block;
     width: 50vw;
@@ -167,7 +168,7 @@ a {
         display: inline-block; }
 
 #galerie {
-  background-color: #c8f1f1; }
+  background-image: url(../img/bgimg/3.jpg); }
   #galerie .albums {
     text-align: center; }
     #galerie .albums > div {
@@ -181,20 +182,20 @@ a {
       width: 100%; }
 
 #spoons {
-  background-color: #c8f1f1; }
+  background-image: url(../img/bgimg/8.jpg); }
 
 #knives {
-  background-color: #c8f1f1; }
+  background-image: url(../img/bgimg/4.jpg); }
 
 #comment {
   position: relative;
-  background-color: #c8f1f1; }
+  background-image: url(../img/bgimg/1.jpg); }
 
 #price {
-  background-color: #c8f1f1; }
+  background-image: url(../img/bgimg/7.jpg); }
 
 #contacts {
-  background-color: #c8f1f1; }
+  background-image: url(../img/bgimg/2.jpg); }
   #contacts .container {
     position: relative; }
   #contacts .map {
@@ -251,33 +252,32 @@ a {
     width: 20%;
     margin: 5%; }
 
-aside {
+aside, .trigger {
   position: absolute;
   right: 5vw;
   bottom: 5vw;
   width: 70px;
   height: 70px;
-  background-color: green;
   -webkit-border-radius: 100%;
   -moz-border-radius: 100%;
   -ms-border-radius: 100%;
   -o-border-radius: 100%;
   border-radius: 100%;
   cursor: pointer; }
-  aside div {
+  aside div, .trigger div {
     position: absolute;
     display: none;
     opacity: 0;
     width: inherit;
     height: inherit;
-    background-color: green;
+    background-color: #D8335B;
     -webkit-border-radius: 100%;
     -moz-border-radius: 100%;
     -ms-border-radius: 100%;
     -o-border-radius: 100%;
     border-radius: 100%;
     cursor: pointer; }
-    aside div img {
+    aside div img, .trigger div img {
       position: absolute;
       -webkit-transform: translate(-50%, -50%);
       -moz-transform: translate(-50%, -50%);
@@ -288,6 +288,20 @@ aside {
       top: 50%;
       height: 50%; }
 
+.trigger {
+  z-index: 1000;
+  background-color: #D8335B; }
+  .trigger img {
+    position: absolute;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+    height: 50%; }
+
 .slider {
   position: relative; }
   .slider .items {
@@ -295,14 +309,11 @@ aside {
     bottom: 0;
     width: 100%;
     font-size: 2vw;
-    background-color: green;
     text-align: center; }
     .slider .items li {
       padding: 1vw;
       display: inline-block;
       cursor: pointer; }
-      .slider .items li:hover {
-        background-color: red; }
 
 .sliderLR_container {
   margin-top: 10vh;
@@ -334,11 +345,11 @@ aside {
     width: 50%;
     text-align: center; }
     .sliderLR_container .sliderLR_trigger li {
-      background-color: green;
+      background-color: #D8335B;
       padding: 1vw;
       display: inline-block;
       cursor: pointer; }
       .sliderLR_container .sliderLR_trigger li:hover {
-        background-color: red; }
+        background-color: #2CC990; }
 
 /*# sourceMappingURL=style.css.map */
